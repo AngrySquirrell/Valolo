@@ -1,64 +1,70 @@
+import { languages } from "./LanguageType";
+
 export type EndpointModel =
     | {
           root: "agents";
-          params: {
+          params?: {
               uuid?: string;
+          };
+          parameters?: {
+              isPlayableCharacter?: boolean;
+              language?: languages;
           };
       }
     | {
           root: "buddies";
           subRoot?: "levels";
-          params: {
+          params?: {
               uuid?: string;
               levelUuid?: string;
           };
       }
     | {
           root: "bundles";
-          params: {
+          params?: {
               uuid?: string;
           };
       }
     | {
           root: "ceremonies";
-          params: {
+          params?: {
               uuid?: string;
           };
       }
     | {
           root: "competitivetiers";
-          params: {
+          params?: {
               uuid?: string;
           };
       }
     | {
           root: "contenttiers";
-          params: {
+          params?: {
               uuid?: string;
           };
       }
     | {
           root: "contracts";
-          params: {
+          params?: {
               uuid?: string;
           };
       }
     | {
           root: "currencies";
-          params: {
+          params?: {
               uuid?: string;
           };
       }
     | {
           root: "events";
-          params: {
+          params?: {
               uuid?: string;
           };
       }
     | {
           root: "gamemodes";
           subRoot?: "equippable";
-          params: {
+          params?: {
               uuid?: string;
               equippableUuid?: string;
           };
@@ -71,32 +77,32 @@ export type EndpointModel =
       }
     | {
           root: "levelborders";
-          params: {
+          params?: {
               uuid?: string;
           };
       }
     | {
           root: "maps";
-          params: {
+          params?: {
               uuid?: string;
           };
       }
     | {
           root: "playercards";
-          params: {
+          params?: {
               uuid?: string;
           };
       }
     | {
           root: "playertitles";
-          params: {
+          params?: {
               uuid?: string;
           };
       }
     | {
           root: "seasons";
           subRoot?: "competitive";
-          params: {
+          params?: {
               uuid?: string;
               competitiveUuid?: string;
           };
@@ -104,15 +110,15 @@ export type EndpointModel =
     | {
           root: "sprays";
           subRoot?: "levels";
-          params: {
+          params?: {
               uuid?: string;
               levelsUuid?: string;
           };
       }
-    | { root: "themes"; params: { uuid?: string } }
+    | { root: "themes"; params?: { uuid?: string } }
     | {
           root: "weapons";
           subRoot?: "skins";
-          params: { uuid?: string; skinUuid?: string };
+          params?: { uuid?: string; skinUuid?: string };
       }
-    | { root: "version"; params: { uuid?: string } };
+    | { root: "version"; params?: { uuid?: string } };

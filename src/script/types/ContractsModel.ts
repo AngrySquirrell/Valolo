@@ -1,37 +1,3 @@
-// status int32
-// data object[] {9}
-// uuid string
-// displayName string (localized)
-// displayIcon string
-// shipIt boolean
-// useLevelVPCostOverride boolean
-// levelVPCostOverride int32
-// freeRewardScheduleUuid string
-// content object {5}
-// relationType string
-// relationUuid string
-// chapters object[] {3}
-// isEpilogue boolean
-// levels object[] {6}
-// reward object {4}
-// type string
-// uuid string
-// amount int32
-// isHighlighted boolean
-// xp int32
-// vpCost int32
-// isPurchasableWithVP boolean
-// doughCost int32
-// isPurchasableWithDough boolean
-// freeRewards object[] {4}
-// type string
-// uuid string
-// amount int32
-// isHighlighted boolean
-// premiumRewardScheduleUuid string
-// premiumVPCost int32
-// assetPath string
-
 type DataModel = {
     uuid: string;
     displayName: string;

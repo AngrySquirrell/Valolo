@@ -5,6 +5,8 @@ import {
     createBrowserRouter,
 } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
+import Agents from "../pages/Agents";
+import Agent from "../pages/Agent";
 
 const Router = ({ children }: { children: React.ReactNode }) => {
     const router = createBrowserRouter([
@@ -20,18 +22,19 @@ const Router = ({ children }: { children: React.ReactNode }) => {
 
                     ),
                 },
-                // {
-                //     path: "/users",
-                //     element: (
-
-                //             <Users />
-
-                //     ),
-                // },
+                {
+                    path: "/agents",
+                    element: <Agents />
+                },
+                {
+                    path: "/agents/:uuid",
+                    element: <Agent />
+                },
                 {
                     path: "*",
                     element: <Navigate to={"/"} />,
                 },
+
             ],
         },
     ]);

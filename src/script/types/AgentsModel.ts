@@ -1,4 +1,4 @@
-type DataModel = {
+export type AgentDataModel = {
     uuid: string;
     displayName: string;
     description: string;
@@ -11,13 +11,13 @@ type DataModel = {
     fullPortraitV2: string;
     killfeedPortrait: string;
     background: string;
-    backgroundGradientColors: string;
+    backgroundGradientColors: string[];
     assetPath: string;
     isFullPortraitRightFacing: boolean;
     isPlayableCharacter: boolean;
     isBaseContent: boolean;
 
-    roles: roleModel;
+    role: roleModel;
     recruitmentData: recruitmentDataModel;
     abilities: abilityModel[];
     voiceLines: voiceLineModel;
@@ -57,9 +57,9 @@ type voiceLineModel = {
 
 export type AgentsModel = {
     status: number;
-    data: DataModel[];
+    data: AgentDataModel[];
 };
 export type AgentModel = {
     status: number;
-    data: DataModel;
+    data: AgentDataModel;
 };

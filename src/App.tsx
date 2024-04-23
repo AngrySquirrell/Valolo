@@ -1,24 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import '@mantine/charts/styles.css';
 import './App.css'
 import { AppShell, MantineProvider } from '@mantine/core';
-import theme from './assets/script/theme';
+import theme from './script/theme';
 import Router from "./router/router";
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import { GlobalContext } from './assets/script/globalContext';
-import { useLocalStorage } from '@mantine/hooks';
+import { GlobalContext, contextModel } from './script/globalContext';
+import '@mantine/core/styles.css';
+import { useValorantAPI } from './script/hooks/useValorantAPI';
+import { useEffect } from 'react';
 
 function App() {
-  const [colorScheme, setColorScheme] = useLocalStorage<'light' | 'dark'>({ key: 'colorScheme', defaultValue: "dark" })
+
+  const defaultContext: Partial<contextModel> = {
+    colorScheme: 'dark',
+    language: "en-US",
+  }
+  // let { data, invalidate } = useValorantAPI({ root: "agents" })
+  // useEffect(() => {
+  //   console.log('Datashboard', data)
+  // }, [data])
 
   return (
-    <GlobalContext.Provider value={{ colorScheme }}>
+    <GlobalContext.Provider value={defaultContext}>
       <MantineProvider theme={theme}>
         <Router>
-          <AppShell>
+          <AppShell
+            navbar={{ width: 192, breakpoint: "100vw" }}
+          // w={"calc(100vw - 144px)"}
+          >
             <AppShell.Navbar>
               <Navbar />
             </AppShell.Navbar>
