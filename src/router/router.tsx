@@ -7,6 +7,8 @@ import {
 import Dashboard from "../pages/Dashboard";
 import Agents from "../pages/Agents";
 import Agent from "../pages/Agent";
+import Maps from "../pages/Maps";
+import Weapons from "../pages/Weapons";
 
 const Router = ({ children }: { children: React.ReactNode }) => {
     const router = createBrowserRouter([
@@ -16,25 +18,28 @@ const Router = ({ children }: { children: React.ReactNode }) => {
             children: [
                 {
                     path: "/",
-                    element: (
-
-                        <Dashboard />
-
-                    ),
+                    element: <Dashboard />,
                 },
                 {
                     path: "/agents",
-                    element: <Agents />
+                    element: <Agents />,
                 },
                 {
                     path: "/agents/:uuid",
-                    element: <Agent />
+                    element: <Agent />,
+                },
+                {
+                    path: "/maps",
+                    element: <Maps />,
+                },
+                {
+                    path: "/weapons",
+                    element: <Weapons />,
                 },
                 {
                     path: "*",
                     element: <Navigate to={"/"} />,
                 },
-
             ],
         },
     ]);
