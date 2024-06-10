@@ -1,7 +1,5 @@
-import { createTheme } from '@mantine/core';
+import { createTheme } from "@mantine/core";
 
-const theme = createTheme({
+const theme = createTheme({});
 
-})
-
-export default theme
+export default theme;

@@ -1,17 +1,9 @@
 import { createContext } from "react";
-import { languages } from "./types/LanguageType";
+import { AppDataModel } from "./types/AppDataModel";
 
-
-export type contextModel = {
-    colorScheme: 'light' | 'dark',
-    language: languages
-}
-
-export const initialValuesContext: Partial<contextModel> = {
-    colorScheme: 'dark',
+export const appDataDefaultValues: AppDataModel = {
+    colorScheme: "dark",
     language: "en-US",
-}
+};
 
-export const GlobalContext = createContext<Partial<contextModel>>(initialValuesContext)
-
-
+export const GlobalContext = createContext<AppDataModel>(appDataDefaultValues);

@@ -6,6 +6,7 @@ import { Box, Button, Flex, Text, Tooltip } from "@mantine/core";
 import Grid from "../components/Grid";
 import { objectKeys } from "../script/objectKeys";
 import { Link, NavLink } from "react-router-dom";
+
 type DashCardName = "Agents" | "Maps" | "Weapons" | "Gamemodes" | "Skins";
 type DashCardsModel = Record<
     DashCardName,
